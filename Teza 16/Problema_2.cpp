@@ -1,48 +1,34 @@
 #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
-
-int nMax(int &n, int c)
+ifstream f("date.in");
+void prob2_16(int &n,int c)
 {
-    int i,k=0,x,ok=0;
-    int copie=n;
-    while(n>9)
+    int copie=0;
+    while(n)
     {
-        n=n/10;
-        k++;
-    }
-    k=pow(10,k);
-    n=copie;
-   while(k!=0)
-    {
-        int aux=(n/(k))%10;
-        if(aux<c)
+        if(c<n%10)
         {
-            cout<<aux<<" trebuie sa inseram inaintea lui nr c ";
-            k=k*10;
-            n=n/k;
-            n=n*10+c;
-            n=n*k;
-            n=n+(copie%k);
-            return n;
-            break;
+
+
+            copie=copie*10+c;
+            copie=copie*10+n%10;
+            c=99;
         }
-        else k=k/10;
+        else copie=copie*10+n%10;
+        n=n/10;
     }
-
-    if(k==0)
+    while(copie)
     {
-        n=copie*10+c;
-        return n;
+        n=n*10+copie%10;
+        copie=copie/10;
     }
+    cout<<n;
 }
-
 int main()
-{
-    int n,c;
-    n=77777;
-    c=1;
-    cout<<nMax(n,c);
-
+{ int n;
+cin>>n;
+   prob2_16( n , 4 );
     return 0;
 }
+
