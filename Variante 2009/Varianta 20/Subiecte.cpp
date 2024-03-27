@@ -18,7 +18,10 @@ if(a>b)
 a=b;}}
 cout<<m;
 reurn 0;}
-  d)daca n>9 repeta...pana cand n<=9
+
+d)daca n>9 repeta...pana cand n<=9
+
+    
 Subiectul 2
 1.d
 2.a
@@ -47,6 +50,8 @@ int main()
     }
     return 0;
 }
+
+
 Subiectul 3
 1.c
 2.35789,35679,35678
